@@ -121,75 +121,75 @@
 
 
 
-//  describe('home page', function() {
-//     it('has a burger menu', function() {
-//         return browser
-//             .url('/')
-//             .getText('#menuToggler')
-//             .then(function(text) {
-//                 expect(text).toContain('menu');
-//             });
-//     });
-//     it('has a logo',function(){
-//         return browser
-//             .getText('.logo')
-//             .then(function(text) {
-//                 expect(text).toContain('loveholidays.com');
-//             })
-//             .click('.search-action');
-
-//     });
-// });
-
-// describe('search results page', function() {
-//     it('has more than one holiday to choose from', function() {
-//         return browser
-//             .waitForExist('.hotel-name')
-//             .elements('.hotel-name')
-//             .then(function(els) {
-//                 expect(els.value.length).toBeGreaterThan(1);
-//             })
-//             .click('.hotel-name .backlink');
-//     });
-// });
-
-
-// describe('the gallery on the hotel page', function() {
-//     it('has a button to show more images', function() {
-//         // test starts on results page.
-//         return browser
-//             .getText('.show-more-indicators')
-//             .then(function(text) {
-//                 expect(text).toContain('Show more images');
-//             })
-//             .click('.hotel-pricing-info .btn-success');
-//     });
-// });
-
-describe('price avalibility', function() {
-    it('has a price per person', function() {
+ describe('home page', function() {
+    it('has a burger menu', function() {
         return browser
-            .url('/holidays/availability/tenerife/costa-del-silencio/alborada-beach-club.html?alltabs=1&state=AgoUKFAAIKHLYYEAAAQA&calDate=16983#view=HL&state=AgoUKFAAIKHLYYEAAAQA')
-
-
-            .waitForExist('.price-per-person')
-            .getText('.price-per-person')
+            .goToHomePage()
+            .getText('#menuToggler')
             .then(function(text) {
-                expect(text).toContain('Price Per Person');
+                expect(text).toContain('menu');
+            });
+    });
+    it('has a logo',function(){
+        return browser
+            .getText('.logo')
+            .then(function(text) {
+                expect(text).toContain('loveholidays.com');
             })
-            .click('#offers-content .btn-success');
+            .homePageSubmitToResults();
+
     });
 });
 
-describe('offer summary', function() {
-    it('has a room type automatically selected', function() {
+describe('search results page', function() {
+    it('has more than one holiday to choose from', function() {
+        var hotelTitle= '.hotel-name';
         return browser
-            .waitForExist('#room_table_0 :checked')
-            .elements('#room_table_0 :checked')
+
+            .waitForExist(hotelTitle)
+            .elements(hotelTitle)
             .then(function(els) {
-                expect(els.value.length).toBe(1);
+                expect(els.value.length).toBeGreaterThan(1);
             })
-            .click('#bookingSubmit .call-to-action');
+            .searchResultsToHotelDetail();
+    });
+});
+describe('hotel page', function() {
+    it('has a button to show more images in gallery section', function() {
+        // test starts on results page.
+        return browser
+            .getText('.show-more-indicators')
+            .then(function(text) {
+                expect(text).toContain('Show more images');
+            })
+            .hotelDetailToPriceAvailibility();
+    });
+});
+
+describe('price availability', function() {
+    it('has a price per person', function() {
+        var pricePerPerson = '#trip-summary .price-per-person';
+        return browser
+            // .url('/holidays/availability/tenerife/costa-del-silencio/alborada-beach-club.html?alltabs=1&state=AgoUKFAAIKHLYYEAAAQA&calDate=16983#view=HL&state=AgoUKFAAIKHLYYEAAAQA')
+            .waitForExist(pricePerPerson)
+            .getText(pricePerPerson)
+            .then(function(text) {
+                expect(text).toContain('Price Per Person');
+            })
+            .priceAvailabilityToBookingSummary();
+    });
+});
+
+describe('booking summary', function() {
+    it('has a room type automatically selected', function() {
+        var roomType= '#room_table_0 :checked';
+        return browser
+            .waitForExist(roomType)
+            .isExisting(roomType)
+            .then(function(isExisting) {
+                expect(isExisting).toBe(true);
+            })
+            .bookingSummaryToPassagerDeets();
     });
 });
 
@@ -205,18 +205,10 @@ describe('offer summary', function() {
 //             });
 //     });
 // });
-describe('passenger details', function() {
-    it('has form for hotel', function() {
-        return browser
-            .windowHandleMaximize()
-            .waitForExist('#bookingPassengers')
-            .selectByIndex('#adult-0-title', 1)
-            .setValue('#adult-0-firstName', 'Tom')
-            .setValue('#adult-0-lastName', 'Surnameage')
-            .click('#id_email')
-            .element('#id_email').then(function(text) {
-                text.value = 'foo';
-            })
+
+
+
+// another way to fill out the email, confirm, contact etc...part of the test running down below. Allows you to run anything you want in the console.
             // .execute(function() {
             //     document.querySelector('#id_email').value = 'mail@tomsurnamage.com'
             //     document.querySelector('#id_confirm_email').value = 'mail@tomsurnamage.com'
@@ -225,22 +217,15 @@ describe('passenger details', function() {
             //     document.querySelector('#id_town').value = 'tester township'
             //     document.querySelector('#id_postcode').value = 'n12 t24'
             // })
-            .setValue('#bookingPassengers #id_email', 'mail@tomsurnamage.com')
-            .setValue('#bookingPassengers #id_confirm_email', 'mail@tomsurnamage.com')
-            .setValue('#bookingPassengers #id_contact', '07429696894')
-            .selectByIndex('#adult-0-birth_date_day', 1)
-            .selectByIndex('#adult-0-birth_date_month', 4)
-            .selectByIndex('#adult-0-birth_date_year', 19)
-            .selectByIndex('#adult-1-title', 0)
-            .setValue('#adult-1-firstName', 'Sam')
-            .setValue('#adult-1-lastName', 'Surnamage')
-            .selectByIndex('#adult-1-birth_date_day', 4)
-            .selectByIndex('#adult-1-birth_date_month', 5)
-            .selectByIndex('#adult-1-birth_date_year', 23)
-            .setValue('#page #id_address1', '123 tester drive')
-            .setValue('#page #id_town', 'tester township')
-            .setValue('#page #id_postcode', 'n12 t24')
-            .click('#bookingSubmit .call-to-action')
+
+
+
+describe('passenger details', function() {
+    it('has form for hotel', function() {
+        return browser
+            // .windowHandleMaximize()
+            .waitForExist('#bookingPassengers')
+            .fillOutPassengerDetailsForm()
             .waitForExist('#bookingDeposit h2')
             // .isVisible('#id_email').then(function(isExisting) {
             //     console.log(isExisting); // outputs: false
@@ -284,3 +269,26 @@ describe('passenger details', function() {
 //             });
 //     });
 // });
+
+// describe('bank details', function() {
+//     it('has form for payment', function() {
+//         var bookingError ='#BookingErrorPanel';
+//         return browser
+//             .waitForExist('#deposit-low')
+//             .bankDetailsPayment
+//             .waitForExist('.cardtype-DEL')
+//             .bankDetailsPayment
+//             .setValue('#card_number',12345678901234567)
+//             .selectByIndex('#expiry_month', 2)
+//             .selectByIndex('#expiry_year', 2)
+//             .setValue('#id_security_code', 123)
+//             .bankDetailsPayment
+//             .waitForExist(bookingError)
+//             .getText(bookingError)
+//             .then(function(text) {
+//                 expect(text).toContain("We're sorry, but it appears some of the payment details are wrong, please make sure they are correct and try again.");
+//             });
+//     });
+// });
+
+
