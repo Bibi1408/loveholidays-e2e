@@ -1,0 +1,23 @@
+So I started to use what seems to be a very easy and not very much documented way of testing. Most testers in the business use Java as there language of choice but I went for the compliant method. I use Javascript with Selenium and the ever so easy WebdriverIO or WDIO for short, because why not use a acronym.  The documentation is easy to understand and they explain things in lamens terms very well. I will show you some examples as we go along and you can see for yourself.
+
+So what is WebdriverIO?
+
+WebdriverIO lets you control a browser or a mobile app with just a few lines of code. Your tests will look simple, concise and easy to read. With the extensive list of easy to use API's with documentation to help you along the way. Perfect for beginners and testers who want clean tests done fast.
+The test runner comes also with a variety of hooks that allow you to interfere into the test process in order to take screenshots if an error occurs or modify the test procedure according to a previous test result.
+
+
+How does it work?
+
+WebdriverIO is an open source testing utility for nodejs. It makes it possible to write super easy selenium tests with Javascript in your favourite BDD(Behavior Driven Development) or TDD(Test Driven Development) test framework. WebdriverIO works in combination with most of the TDD and BDD test frameworks in the JavaScript world. Even Cucumber tests are supported.
+
+
+
+
+f. WebdriveIO is fantastic, and if you’re using Selenium-Webdriver (the official JS library) instead you’re almost certainly making a mistake.
+
+Fundamentally, WebdriverIO is an attempt to provide a much nicer, more powerful and more usable Selenium API for JavaScript. Their site can talk you through all the features, but for me the really key magic is:
+
+Nice, usable, high-level API
+Easily extendable
+Automatically handles stale elements
+Abstracts away asynchrony almost entirely

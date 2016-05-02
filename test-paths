@@ -1,0 +1,165 @@
+Test cases end to end  Love Holidays
+====================
+
+HAPPY PATH
+
+
+Go to home page at http://www.loveholidays.com/
+expect there to be a burger menu
+
+
+click search button
+expect to go to holidays results page
+and there are more than one holiday to choose from with cta's
+
+click link for holiday package user would like to choose
+expect pictures of the location
+
+then click price avaiblitity
+expect to see price per person
+
+click contunue button
+expect more than 1 hotel
+
+go to hotel page
+expect to see room type and description
+and how many rooms needed
+
+
+
+click continue button
+expect a form for hotel booking
+and fill in form fields for people staying
+
+
+click continue button
+expect to see payment plan
+
+pick a payment plan
+and go to payment details page
+then fill in form for payment
+(card details, name etc..)
+
+click continue button
+expect to see payment recieved
+expect booking to be complete with email?
+
+====================================================
+INPUT SPECIFICS PATH- NO DATES
+
+1.
+go to home page
+expect there to be a destination feild box
+input destination in feild box-Spain
+input departure airport through drop down
+select-Any London
+select duration of-7nights in drop down
+click search button
+
+2.
+expect to have Holiday Search in title
+expect the top search bar to have same details as inputed on home page
+3.
+expect holidays page to have sort by drop down
+click first holiday check avaiblity button
+
+4.
+expect price per person next to weather
+expect weather to be on date picker box
+expect Room options and extras available at the next step to be before continue button
+click continue button
+
+5.
+expect to be on book flight and hotel/ offer summary page
+expect to have room type highlighted in blue
+choose a room you would like
+click and choose room type
+click and choose transfer service
+expect to have insurence highlighted in blue
+click continue button
+
+6.
+//get form from actions
+expect to be on book/flight details page
+expect adult one form
+fill in form fields
+expect adult 2 form
+fill in form fields
+expect lead passager address form
+fill in form fields
+click continue button
+
+7.
+expect to be on payment plan page
+click ppular payment method
+expect billing address to have name and details under it in gray
+expect total to be in pink
+expect payment details form
+fill in payment details form fields
+expect book now button in green
+
+end of test suite
+
+=======================================
+INPUT SPECIFICS WITH DATES-DIFFERENT PLACES
+
+1.
+go to Home page
+expect there to be a destination field box
+fill in destination field box with Orlando, Florida
+expect there to be an air port field box
+choose Any London as departure location
+expect Add another room link
+click Search Button
+
+2.
+expect to be on Holidays page with list of hotels and resorts
+expect there to be a picture for hotel
+expect there to be a star rating on side bar
+expect there to be a trip advisor rating on side bar
+expect holiday types on side bar
+click picture of 1st holiday on page
+
+3.
+expect to be on holiday page with chosen holiday package
+expect there to be big picture of hotel
+expect there to be little matching picture on left side of hotel
+expect Add to Shorlist link
+expect show more images
+click price and availibility button
+
+4.
+expect to see what airport you will be leaving from
+expect all payment options link
+expect inbound and outbound time lines to exist
+click green cheveron button next to flight details button
+
+5.
+expect to be on book/ flight and hotel page
+expect free cancelation in purple banner above hotel
+expect holding luggage to be free
+expect travel insurence
+expect price match gaurentee pop up modle
+click Continue button
+
+6.
+expect to be on passager details page
+expect passager details form to contain confirm email field
+fill in passager details form
+expect right side bar to exist
+expect trust pilet at bottom of page
+click continue button
+
+7.
+expect to be on payment plan page
+click ppular payment method
+expect billing address to have name and details under it in gray
+expect total to be in pink
+expect payment details form
+fill in payment details form fields
+expect book now button in green
+
+end of test suite
+
+
+===============================================

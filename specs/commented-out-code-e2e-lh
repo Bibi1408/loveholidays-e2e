@@ -112,86 +112,8 @@
 
 
 
+===================
 
-
-
-
-
-
-
-
-
- describe('home page', function() {
-    it('has a burger menu', function() {
-        return browser
-            .goToHomePage()
-            .getText('#menuToggler')
-            .then(function(text) {
-                expect(text).toContain('menu');
-            });
-    });
-    it('has a logo',function(){
-        return browser
-            .getText('.logo')
-            .then(function(text) {
-                expect(text).toContain('loveholidays.com');
-            })
-            .homePageSubmitToResults();
-
-    });
-});
-
-describe('search results page', function() {
-    it('has more than one holiday to choose from', function() {
-        var hotelTitle= '.hotel-name';
-        return browser
-
-            .waitForExist(hotelTitle)
-            .elements(hotelTitle)
-            .then(function(els) {
-                expect(els.value.length).toBeGreaterThan(1);
-            })
-            .searchResultsToHotelDetail();
-    });
-});
-describe('hotel page', function() {
-    it('has a button to show more images in gallery section', function() {
-        // test starts on results page.
-        return browser
-            .getText('.show-more-indicators')
-            .then(function(text) {
-                expect(text).toContain('Show more images');
-            })
-            .hotelDetailToPriceAvailibility();
-    });
-});
-
-describe('price availability', function() {
-    it('has a price per person', function() {
-        var pricePerPerson = '#trip-summary .price-per-person';
-        return browser
-            // .url('/holidays/availability/tenerife/costa-del-silencio/alborada-beach-club.html?alltabs=1&state=AgoUKFAAIKHLYYEAAAQA&calDate=16983#view=HL&state=AgoUKFAAIKHLYYEAAAQA')
-            .waitForExist(pricePerPerson)
-            .getText(pricePerPerson)
-            .then(function(text) {
-                expect(text).toContain('Price Per Person');
-            })
-            .priceAvailabilityToBookingSummary();
-    });
-});
-
-describe('booking summary', function() {
-    it('has a room type automatically selected', function() {
-        var roomType= '#room_table_0 :checked';
-        return browser
-            .waitForExist(roomType)
-            .isExisting(roomType)
-            .then(function(isExisting) {
-                expect(isExisting).toBe(true);
-            })
-            .bookingSummaryToPassagerDeets();
-    });
-});
 
 // describe('passenger details', function() {
 //     it('has form validation', function() {
@@ -219,25 +141,11 @@ describe('booking summary', function() {
             // })
 
 
+            ===============
 
-describe('passenger details', function() {
-    it('has form for hotel', function() {
-        return browser
-            // .windowHandleMaximize()
-            .waitForExist('#bookingPassengers')
-            .fillOutPassengerDetailsForm()
-            .waitForExist('#bookingDeposit h2')
-            // .isVisible('#id_email').then(function(isExisting) {
-            //     console.log(isExisting); // outputs: false
-            // })
-            // .getText('#id_email')
-            .getText('#bookingDeposit h2')
-            .then(function(text) {
-                expect(text).toContain('Select a Payment Plan');
-            });
-    });
-});
-// describe('passenger details', function() {
+
+
+            // describe('passenger details', function() {
 //     it('has form for hotel', function() {
 //         return browser
 //             .waitForExist('#bookingPassengers')
