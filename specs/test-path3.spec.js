@@ -1,10 +1,9 @@
-xdescribe('test-path3',function(){
+describe('test-path3',function(){
     describe('Home Page',function(){
         it('has destination field',function(){
             return browser
                 .goToHomePage()
                 .waitForExist('.search-destination-predict')
-                // .isExisting('.search-destination-predict')
                 .then(function(isExisting){
                     expect(isExisting).toBe(true);
                 });
@@ -32,7 +31,6 @@ xdescribe('test-path3',function(){
         it('has picture of resorts', function() {
             return browser
                 .waitForExist('#imagery')
-                .isExisting('#imagery')
                 .then(function(isExisting) {
                     expect(isExisting).toBe(true);
                });
@@ -64,15 +62,13 @@ xdescribe('test-path3',function(){
         it('has a large picture of destination resort', function() {
             return browser
                 .waitForExist('#main-tab-content')
-                .isExisting('#main-tab-content')
                 .then(function(isExisting) {
                     expect(isExisting).toBe(true);
                 });
         });
         it('has a small matching thumbnail picture of destination resort', function() {
             return browser
-                .waitForExist('img[src="http://www.loveholidays.com/images/holidays/usa/florida/orlando/kuality-resort-1.CRD.jpg"]')
-                .isExisting('img[src="http://www.loveholidays.com/images/holidays/usa/florida/orlando/kuality-resort-1.CRD.jpg"]')
+                .waitForExist('.thumbnail')
                 .then(function(isExisting) {
                     expect(isExisting).toBe(true);
                 });
@@ -86,9 +82,9 @@ xdescribe('test-path3',function(){
         });
         it('has show more images under large picture',function(){
             return browser
-                .isExisting('.show-more-indicators')
-                .then(function(isExisting){
-                    expect(isExisting).toBe(true);
+                .getText('.show-more-indicators')
+                .then(function(text){
+                    expect(text).toContain('Show more images');
                 })
                 .holidayAvailabilityContinueButton();
 
@@ -98,7 +94,6 @@ xdescribe('test-path3',function(){
         it('has way to pay tool tip',function(){
             return browser
                 .waitForExist('#ways-to-pay-tooltip-')
-                .isExisting('#ways-to-pay-tooltip-')
                 .then(function(isExisting){
                     expect(isExisting).toBe(true);
                 });
@@ -106,7 +101,6 @@ xdescribe('test-path3',function(){
         it('has outbound timeline',function(){
             return browser
                 .waitForExist('.noUi-base')
-                .isExisting('.noUi-base')
                 .then(function(isExisting){
                     expect(isExisting).toBe(true);
                 });
@@ -114,7 +108,6 @@ xdescribe('test-path3',function(){
          it('has inbound timeline',function(){
             return browser
                 .waitForExist('.slider-component')
-                .isExisting('.slider-component')
                 .then(function(isExisting){
                     expect(isExisting).toBe(true);
                 })
@@ -125,7 +118,6 @@ xdescribe('test-path3',function(){
         it('has free cancelation baner at top of the page',function(){
             return browser
                 .waitForExist('#bookingFields')
-                .isExisting('#bookingFields')
                 .then(function(isExisting){
                     expect(isExisting).toBe(true);
                 });

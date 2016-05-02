@@ -121,7 +121,7 @@ xdescribe('dimensions', function () {
             return browser
                 .waitForExist('#bookingPassengers')
                 .fillOutPassengerDetailsForm()
-                .bookingDetailsHeading
+                .bookingDetailsHeading()
                 .then(function(text) {
                     expect(text).toContain('Select a Payment Plan');
                 })
@@ -136,7 +136,7 @@ xdescribe('dimensions', function () {
                 .isExisting('#cardSummary')
                 .click('.cardtype-DEL')
                 // .pause(25000)
-                .paymentDetailsCardPaymentDeets
+                .paymentDetailsCardPaymentDeets()
                 .getText('#page #bookingAmmendAddress')
                 .then(function(text) {
                     expect(text).toContain('Mrs Tom Surnameage, 123 tester drive, tester township, n12 t24');

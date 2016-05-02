@@ -1,4 +1,4 @@
-describe('happy path',function(){
+xdescribe('happy path',function(){
     describe('home page', function() {
         it('has a burger menu', function() {
             return browser
