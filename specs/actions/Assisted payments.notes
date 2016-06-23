@@ -1,0 +1,181 @@
+Assisted Payment test 1:
+
+Visa Debit-4137335600117780/2401/200/ https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD79U5
+
+visa debit-4508750015741019/2403/223/ https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD79Q2
+
+visa-4715059999000437/2404/423/ https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD79R3
+
+visa-4917480000000008/2404/200/ https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9GUY
+
+
+
+master card- 5454609899026213/2404/200 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9GVZ
+
+amex- 34567000000007/1705/2334 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9GRW
+
+mastercard- 5123456789012346/2404/456 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?errno=2.1&shortref=LCCD9GY4
+
+maestro- 6759000968432575/2403/456 https://secure.eu.tnspayments.com/acs/MastercardACS/d7af025f-f02f-44bc-979e-452b3beb7dae
+
+maestro- 6759173972560846/1705/200/233/345 https://secure.eu.tnspayments.com/acs/MastercardACS/2f4ae2c3-a520-45ad-aea2-f64a5bbb755b
+
+amex- 345678000000007/2401/3455 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9GW2
+
+amex- 345678000000007/2904/2334 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9GX3
+
+master card- 5301250070000050 1701/ 233 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9EBH
+
+amex- 345678000000007 2401/3445 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9ECJ
+
+mastercard- 5123456789012346 3301/ 200 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9EAG
+
+mastercard- 5301250070000050 3302/ 233 https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD9EGP
+
+maestro will not work because the number of card is too long. Also, the exiry date that are in the past will not go through as they red (Dont not enter sign ) error comes up and will not let you go through to the book now portion of the booking. Here are the short ref's for the following tests.
+
+
+==================================================
+Assisted Payment test 2:
+
+
+card type:Visa Debit
+card number:4137335600117780
+csc:200
+expiry dates:2401
+number of tries: 1
+url:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD88JY
+
+Card type:Visa Debit
+Card number:4508750015741019
+Exipry date:2404
+CSC:345
+Number of tries: 1
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD88KZ
+
+Card type: Visa
+Card number:4715059999000437
+Exipry date:3301
+CSC:876
+Number of tries:1
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD88GW
+
+Card type: Visa
+Card number:4917480000000008
+Exipry date:2404
+CSC:890
+Number of tries:1
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD88HX
+
+Card type: maestro
+Card number:5000008602179457569
+Exipry date:3302
+CSC:265
+Number of tries: 5 (not going through)
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/payment-details.html?shortref=LCCD875H
+
+Card type:maestro
+Card number: 6759173972560846
+Exipry date:3302
+CSC:567
+Number of tries: 3 (going throught to acs emulator)
+URL:https://secure.eu.tnspayments.com/acs/MastercardACS/ce1ed19c-2695-48db-91d5-d066b72d8489
+
+Card type: master card
+Card number:5454609899026213
+Exipry date:2403
+CSC:233
+Number of tries: 2
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD876J
+
+Card type:Master Card
+Card number:5301250070000050
+Exipry date:3302
+CSC:134
+Number of tries: 1
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD873E
+
+Card type: Amex
+Card number:345678000000007
+Exipry date:1504
+CSC:2367
+Number of tries: 2 (doesn't go through because exipry date is in the past)
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/payment-details.html?shortref=LCCD874G
+
+Card type:Amex
+Card number:345678000000007
+Exipry date:2904
+CSC:3987
+Number of tries:1
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD874G
+
+Card type:Amex
+Card number:345678000000007
+Exipry date:2401
+CSC:8967
+Number of tries: 1
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD879P
+
+Card type:Visa
+Card number:491748000000
+Exipry date:2403
+CSC:200
+Number of tries: 1 (wont work because card number is too short)
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/payment-details.html?shortref=LCCD88AQ
+
+Card type: master card credit
+Card number: 5301250070000050
+Exipry date:3302
+CSC:479
+Number of tries: 1
+URL: https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD88AQ
+
+Card type:master card credit
+Card number: 5301250070000050
+Exipry date:2907 (Not a expiry date on the list but went through)
+CSC:325
+Number of tries:1
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD877K
+
+Card type:visa
+Card number:4137335600117780
+Exipry date:1709
+CSC:788
+Number of tries:1 (expiry date not on list but went through)
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD878L
+
+Card type:visa debit
+Card number:4917480000000009
+Exipry date:2902
+CSC:567
+Number of tries: 3
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/payment-details.html?shortref=LCCD882C
+
+Card type:visa debit
+Card number:4137335600117780
+Exipry date:1703
+CSC:345
+Number of tries: 3 (did not go through)
+URL:https://web05.dev.loveholidays.com/book/flight-and-hotel/payment-details.html?shortref=LCCD897H
+
+Card type: Visa Electron
+Card number:4715059999000437
+expiry date:2404
+CSC:888
+number of tries: 1
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD882C
+
+Card type: Amex
+Card number:345678000000007
+expiry date:1609
+CSC:3456
+number of tries: 1 (worked with expiry date not on the list)
+URL:https://web01.dev.loveholidays.com/book/flight-and-hotel/confirmation.html?shortref=LCCD883D
+
+
+Card type: Visa debit
+Card number:4508750015741019
+expiry date:2004
+CSC:212
+number of tries: 1 (Didnt got through, just to Ams Emulator)
+URL:https://secure.eu.tnspayments.com/acs/VisaACS/49b1cd36-c31c-4c54-b29d-b0e5a46b11ab

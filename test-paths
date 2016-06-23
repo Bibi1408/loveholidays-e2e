@@ -163,3 +163,57 @@ end of test suite
 
 
 ===============================================
+Local- on develpers local computer they give it to git and jenkins listens to it.
+Development- develpers are developing and send it to Intergrated.
+Intigrated- intergrated is full of features and then goes to protocol. when testing Int features only
+QA- Testing the bugs that we once found
+Staging- As close to the priduct as possible before giving it to live.
+Production- Live website finished product.
+
+===================================================
+
+Mobile test path
+
+go to home page
+expect to have a search field
+enter search parameters and expect to have destination field
+expect to have duration
+search button to next page
+
+
+expect to get to destinations page
+expect to have a picture and heading with title of hotel
+expect to have what is included? link for model
+expect to have price per person
+expect to have pay only pink bar underwhat is included? link
+expect to have sale banner or customer favourite banner
+
+click check availability button
+expect to be on hotel availability page
+expect to have heading for the hotel name
+expect to have stars under heading
+expect to have a hotel only tab
+expect to have holidays tab
+expect to have breakdown link
+click breakdown link
+expect to have flight , accommodation, total and deposit option from
+click done
+expect to have flight from field
+expect to have duration drop down
+choose duration
+expect to have show more flight options link
+
+
+expect to be on show more flight options page
+expect to have a airline filter
+click any
+expect all airlines to be ticked
+click done
+expect airport filter
+click any
+expect all boxes to be ticked
+click done
+click flight you want by clicking the big green button with price
+
+
+expect interstial and go to next page.

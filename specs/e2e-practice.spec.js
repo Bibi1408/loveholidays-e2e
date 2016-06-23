@@ -1,4 +1,4 @@
-describe('test-path3',function(){
+describe('e2e-practice',function(){
     describe('Home Page',function(){
         it('has destination field',function(){
             return browser

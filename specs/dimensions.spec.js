@@ -8,33 +8,33 @@ xdescribe('dimensions', function () {
                 // enters Spain into field and clicks destination.
                 .homePageSearchFormClickADestination()
                 .waitForExist('.search-destination-predict-value-list a')
-                .click('#date-button')
-                .waitForExist('.calendar .day')
-                .getHTML('.calendar .day')
-                // tests done by Siobhan up to this point.
-                .then(function(html) {
-                    var dayElementString = html[0];
-                    var dayDateArray = dayElementString.match(/calendar-day-(\d{4})-(\d{2})-(\d{2})/);
-                    dateSelected = new Date(parseInt(dayDateArray[1], 10), parseInt(dayDateArray[2], 10)-1, parseInt(dayDateArray[3], 10));
-                })
-                .click('.calendar .day')
-                .pause(4000)
-                .homePageClickSearchButton();
-        });
+                // .click('#date-button')
+                // .waitForExist('.calendar .day')
+                // .getHTML('.calendar .day')
+    //             tests done by Siobhan up to this point.
+    //             .then(function(html) {
+    //                 var dayElementString = html[0];
+    //                 var dayDateArray = dayElementString.match(/calendar-day-(\d{4})-(\d{2})-(\d{2})/);
+    //                 dateSelected = new Date(parseInt(dayDateArray[1], 10), parseInt(dayDateArray[2], 10)-1, parseInt(dayDateArray[3], 10));
+    //             })
+    //             .click('.calendar .day')
+    //             .pause(4000)
+    //             .homePageClickSearchButton();
+    //     });
     });
-    describe('Next page', function () {
-        it('sees the dateSelected var', function () {
-            return browser
-                .waitForExist('.search-summary-list li')
-                .getHTML('.search-summary-container')
-                .then(function(html) {
-                    expect(html).toContain('Departure Date: 0'+dateSelected.getDate()+'-0'+(dateSelected.getMonth()+1)+'-'+dateSelected.getFullYear());
-                });
-        });
-    });
+    // describe('Next page', function () {
+    //     it('sees the dateSelected var', function () {
+    //         return browser
+    //             .waitForExist('.search-summary-list li')
+    //             .getHTML('.search-summary-container')
+    //             .then(function(html) {
+    //                 expect(html).toContain('Departure Date: 0'+dateSelected.getDate()+'-0'+(dateSelected.getMonth()+1)+'-'+dateSelected.getFullYear());
+    //             });
+    //     });
+     });
 // These tests done by Alex as a teaching lesson.
 
-    describe('Holidays', function() {
+    xdescribe('Holidays', function() {
         it('has destination fields filled in from home page', function() {
             return browser
                 .waitForExist('.search-summary-list li')
@@ -77,7 +77,7 @@ xdescribe('dimensions', function () {
     });
 
     describe('holiday availability', function() {
-        it('has has price per person link', function() {
+        it('has price per person link', function() {
             return browser
                 .isExisting('#panda-group-pricing')
                 .then(function(isExisting) {
